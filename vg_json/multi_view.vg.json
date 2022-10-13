@@ -1,0 +1,359 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/multi_view.csv"
+  },
+  "vconcat": [
+    {
+      "hconcat": [
+        {
+          "height": 250,
+          "width": 340,
+          "title": {
+            "text": "Day 0 - 28",
+            "fontSize": 20,
+            "font": "Source Sans Pro,sans-serif",
+            "offset": 25
+          },
+          "transform": [
+              {
+                "filter": "datum.life_stage == 'day0_28'"
+              },
+              {"filter": {"param": "time_brush"}},
+              {"calculate": "'Day 0 - 28'", "as": "text_annotation"}
+          ],
+          "params": [
+                {"name": "select", "select": "point"},
+                {"name": "sel_continent", "select": {"type": "point", "fields": ["continent"]}, "bind": "legend"},
+                {
+                  "name": "highlight",
+                  "select": {"type": "point", "on": "mouseover"}
+                }
+          ],
+          "mark": {"type": "arc", "innerRadius": 50, "stroke": "black"},
+          "encoding": {
+            "theta": {"aggregate": "mean", "field": "deaths", "type": "quantitative"},
+            "color": {
+              "field": "continent", "type": "nominal",
+              "legend": {
+                  "columnPadding": 40,
+                  "titlePadding": 10,
+                  "title": "Continent",
+                  "orient": "none",
+                  "direction": "vertical",
+                  "titleFont": "Source Sans Pro,sans-serif",
+                  "columns": 1,
+                  "titleLimit": 500,
+                  "legendX": 1080,
+                  "legendY": 25,
+                  "titleFontSize": 15
+              },
+              "scale": {
+                  "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+                  "range": ["#76b7b2", "#f28e2b", "#4e79a7", "#9c755f", "#e15759", "#edc948"]
+              }
+            },
+            "tooltip": [
+              {"field": "text_annotation", "title": "Life Stage"},
+              {"field": "continent", "title": "Continent"},
+              {
+                "aggregate": "mean",
+                "field": "deaths",
+                "title": "Average Child Deaths",
+                "format": ",.2f"
+              }
+            ],
+            "fillOpacity": {
+              "condition": {"param": "select", "value": 1},
+              "value": 0.3
+            },
+            "strokeWidth": {
+              "condition": [
+                {
+                  "param": "select",
+                  "empty": false,
+                  "value": 2
+                },
+                {
+                  "param": "highlight",
+                  "empty": false,
+                  "value": 1
+                }
+              ],
+              "value": 0
+            },
+            "opacity": {
+              "condition": {"param": "sel_continent", "value": 1},
+              "value": 0.4
+            },
+            "order": {"aggregate": "mean", "field": "deaths", "type": "quantitative", "sort": "descending"}
+          }
+        },
+        {
+          "height": 250,
+          "width": 340,
+          "title": {
+            "text": "Day 29 - 365",
+            "fontSize": 20,
+            "font": "Source Sans Pro,sans-serif",
+            "offset": 25
+          },
+          "transform": [
+              {
+                "filter": "datum.life_stage == 'day29_1'"
+              },
+              {"filter": {"param": "time_brush"}},
+              {"calculate": "'Day 29 - 365'", "as": "text_annotation"}
+          ],
+          "params": [
+                {"name": "select", "select": "point"},
+                {
+                  "name": "highlight",
+                  "select": {"type": "point", "on": "mouseover"}
+                }
+          ],
+          "mark": {"type": "arc", "innerRadius": 50, "stroke": "black"},
+          "encoding": {
+            "theta": {"aggregate": "mean", "field": "deaths", "type": "quantitative"},
+            "color": {
+              "field": "continent", "type": "nominal",
+              "legend": {
+                  "title": "Continent"
+              },
+              "scale": {
+                  "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+                  "range": ["#76b7b2", "#f28e2b", "#4e79a7", "#9c755f", "#e15759", "#edc948"]
+              }
+            },
+            "tooltip": [
+              {"field": "text_annotation", "title": "Life Stage"},
+              {"field": "continent", "title": "Continent"},
+              {
+                "aggregate": "mean",
+                "field": "deaths",
+                "title": "Average Child Deaths",
+                "format": ",.2f"
+              }
+            ],
+            "fillOpacity": {
+              "condition": {"param": "select", "value": 1},
+              "value": 0.3
+            },
+            "strokeWidth": {
+              "condition": [
+                {
+                  "param": "select",
+                  "empty": false,
+                  "value": 2
+                },
+                {
+                  "param": "highlight",
+                  "empty": false,
+                  "value": 1
+                }
+              ],
+              "value": 0
+            },
+            "opacity": {
+              "condition": {"param": "sel_continent", "value": 1},
+              "value": 0.4
+            },
+            "order": {"aggregate": "mean", "field": "deaths", "type": "quantitative", "sort": "descending"}
+          }
+        },
+        {
+          "height": 250,
+          "width": 340,
+          "title": {
+            "text": "Year 1 - 4",
+            "fontSize": 20,
+            "font": "Source Sans Pro,sans-serif",
+            "offset": 25
+          },
+          "transform": [
+              {
+                "filter": "datum.life_stage == 'year1_4'"
+              },
+              {"filter": {"param": "time_brush"}},
+              {"calculate": "'Year 1 - 4'", "as": "text_annotation"}
+          ],
+          "params": [
+                {"name": "select", "select": "point"},
+                {
+                  "name": "highlight",
+                  "select": {"type": "point", "on": "mouseover"}
+                }
+          ],
+          "mark": {"type": "arc", "innerRadius": 50, "stroke": "black"},
+          "encoding": {
+            "theta": {"aggregate": "mean", "field": "deaths", "type": "quantitative"},
+            "color": {
+              "field": "continent", "type": "nominal",
+              "legend": {
+                  "title": "Continent"
+              },
+              "scale": {
+                  "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+                  "range": ["#76b7b2", "#f28e2b", "#4e79a7", "#9c755f", "#e15759", "#edc948"]
+              }
+            },
+            "tooltip": [
+              {"field": "text_annotation", "title": "Life Stage"},
+              {"field": "continent", "title": "Continent"},
+              {
+                "aggregate": "mean",
+                "field": "deaths",
+                "title": "Average Child Deaths",
+                "format": ",.2f"
+              }
+            ],
+            "fillOpacity": {
+              "condition": {"param": "select", "value": 1},
+              "value": 0.3
+            },
+            "strokeWidth": {
+              "condition": [
+                {
+                  "param": "select",
+                  "empty": false,
+                  "value": 2
+                },
+                {
+                  "param": "highlight",
+                  "empty": false,
+                  "value": 1
+                }
+              ],
+              "value": 0
+            },
+            "opacity": {
+              "condition": {"param": "sel_continent", "value": 1},
+              "value": 0.4
+            },
+            "order": {"aggregate": "mean", "field": "deaths", "type": "quantitative", "sort": "descending"}
+          }
+        }
+      ]
+    },
+    {
+      "height": 200,
+      "width": 1200,
+      "title": {
+        "text": "",
+        "offset": 50
+      },
+      "layer": [
+        {
+          "mark": {
+            "type": "area",
+            "line": {
+                "color": "darkgreen"
+            },
+            "color": {
+                "x1": 1,
+                "y1": 1,
+                "x2": 1,
+                "y2": 0,
+                "gradient": "linear",
+                "stops": [
+                  {
+                    "offset": 0,
+                    "color": "white"
+                  },
+                  {
+                    "offset": 1,
+                    "color": "darkgreen"
+                  }
+                ]
+            }
+          },
+          "transform": [
+          ],
+          "params": [
+            {
+              "name": "time_brush",
+              "select": {"type": "interval", "encodings": ["x"]}
+            }
+          ],
+          "encoding": {
+            "x": {"field": "year", "type": "nominal", "title": "Year"},
+            "y": {
+              "aggregate": "mean",
+              "field": "mortality_rate",
+              "title": "Child Mortality Rate"
+            },
+            "tooltip": [
+              {"field": "year", "title": "Year"},
+              {
+                "aggregate": "mean",
+                "field": "mortality_rate",
+                "title": "Child Mortality Rate",
+                "format": ".2f"
+              }
+            ]
+          }
+        },
+        {
+          "transform": [
+            {"filter": "datum.year == '2011'"},
+            {
+              "calculate": "'United Nation proposed Global Goal ; Policy to reduce child mortality'",
+              "as": "text_annotation"
+            },
+            {
+              "calculate": "split(datum.text_annotation, ';')",
+              "as": "text_annotation"
+            }
+          ],
+          "mark": {"type": "text", "fontWeight": "normal", "dx": 300, "dy": -70, "color": "red", "fontSize": 18, "font": "Source Sans Pro, sans-serif"},
+          "encoding": {
+            "text": {"field": "text_annotation"}
+          }
+        },
+        {
+          "data": {"values": [{"year": "2010"}]},
+          "encoding": {"x": {"field": "year", "type": "ordinal"}},
+          "layer": [
+            {
+              "mark": "rule",
+              "encoding": {"size": {"value": 1.5}, "color": {"value": "red"}}
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "config": {
+    "axis": {
+      "labelFont": "Source Sans Pro, sans-serif",
+      "labelAngle": 0,
+      "labelColor": "black",
+      "titleColor": "black",
+      "gridColor": "lighter",
+      "labelFontSize": 14,
+      "labelLimit": 500
+    },
+    "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5},
+    "style": {
+      "guide-title": {
+        "font": "Source Sans Pro, sans-serif",
+        "limit": 400,
+        "fontSize": 15
+      },
+      "text": {
+        "font": "Source Sans Pro, sans-serif",
+        "fontWeight": "normal",
+        "size": 14
+      }
+    },
+    "legend": {
+      "columns": 5,
+      "labelLimit": 300,
+      "labelFontSize": 13,
+      "labelFont": "Source Sans Pro, sans-serif",
+      "labelPadding": 4,
+      "rowPadding": 6
+    },
+    "background": "#ffede8"
+  }
+}

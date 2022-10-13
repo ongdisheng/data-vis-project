@@ -1,0 +1,175 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 625,
+    "height": 500,
+    "title": "Worst Performing Countries",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/bar_chart.csv"
+    },
+    "transform": [
+      {"calculate": "toNumber(datum.mortality_rate)", "as": "mortality_rate"},
+      {
+        "window": [{"op": "rank", "as": "rank"}],
+        "sort": [{"field": "mortality_rate", "order": "descending"}]
+      },
+      {"filter": "datum.rank <= top_n_rank"}
+    ],
+    "params": [
+      {
+        "name": "top_n_rank", "value": 10,
+        "bind": {
+          "input": "range", "min": 1, "max": 20, "step": 1,
+          "name": "Countries: "
+        }
+      }
+    ],
+    "layer": [
+      {
+        "params": [{"name": "brush", "select": {"type": "interval", "encodings": ["y"]}}],
+        "mark": "bar",
+        "encoding": {
+          "x": {
+            "field": "mortality_rate",
+            "type": "quantitative",
+            "title": "Child Mortality Rate",
+            "aggregate": "mean"
+          },
+          "y": {
+            "field": "country",
+            "title": "Country",
+            "type": "nominal",
+            "axis": null,
+            "sort": {
+              "field": "mortality_rate",
+              "op": "average",
+              "order": "descending"
+            }
+          },
+          "color": {
+            "field": "continent",
+            "scale": {
+              "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+              "range": ["#76b7b2", "#f28e2b", "#4e79a7", "#9c755f", "#e15759", "#edc948"]
+            },
+            "legend": null
+          },
+          "opacity": {"condition": {"param": "brush", "value": 1}, "value": 0.5},
+          "tooltip": [
+            {"field": "country", "type": "nominal", "title": "Country"},
+            {"field": "continent", "type": "nominal", "title": "Continent"},
+            {
+              "field": "mortality_rate",
+              "type": "quantitative",
+              "title": "Child Mortality Rate Per 1,000 Live Births",
+              "format": ".2f"
+            }
+          ]
+        }
+      },
+      {
+        "transform": [{"filter": {"param": "brush"}}],
+        "mark": "rule",
+        "encoding": {
+          "x": {
+            "aggregate": "mean",
+            "field": "mortality_rate",
+            "type": "quantitative"
+          },
+          "color": {"value": "firebrick"},
+          "size": {"value": 2}
+        }
+      },
+      {
+        "transform": [
+          {"filter": {"param": "brush"}},
+          {
+            "aggregate": [
+              {
+                "op": "mean",
+                "field": "mortality_rate",
+                "as": "mean_deaths"
+              }
+            ],
+            "groupby": ["brush"]
+          },
+          {"calculate": "'Average child mortality rate: '", "as": "text_annotation"}
+        ],
+        "mark": {
+          "type": "text",
+          "fontWeight": "normal",
+          "dx": 120,
+          "dy": -270,
+          "fontSize": 16
+        },
+        "encoding": {"text": {"field": "text_annotation"}, "color": {"value": "black"}}
+      },
+      {
+        "transform": [
+          {"filter": {"param": "brush"}},
+          {
+            "aggregate": [
+              {
+                "op": "mean",
+                "field": "mortality_rate",
+                "as": "mean_deaths"
+              }
+            ],
+            "groupby": ["brush"]
+          },
+          {"calculate": "format(datum['mean_deaths'], '.2f')", "as": "text_annotation"}
+        ],
+        "mark": {
+          "type": "text",
+          "fontWeight": "bold",
+          "dx": 250,
+          "dy": -270,
+          "fontSize": 20
+        },
+        "encoding": {"text": {"field": "text_annotation"}, "color": {"value": "black"}}
+      }, 
+      {
+        "mark": {"type": "text", "align": "left", "x": 5},
+        "encoding": {
+          "y": {
+            "field": "country",
+            "title": "Country",
+            "type": "nominal",
+            "axis": null,
+            "sort": {
+              "field": "mortality_rate",
+              "op": "average",
+              "order": "descending"
+            }
+          },
+          "text": {"field": "country"},
+          "color": {"value": "white"}
+        }
+      }
+    ],
+    "config": {
+      "axis": {
+        "labelFont": "Source Sans Pro, sans-serif",
+        "labelColor": "black",
+        "titleColor": "black",
+        "gridColor": "lighter",
+        "labelFontSize": 14,
+        "labelLimit": 500
+      },
+      "lineBreak": "lb",
+      "title": {
+        "fontSize": 22,
+        "padding": {"left": 5, "top": 5, "right": 5, "bottom": 10}
+      },
+      "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5},
+      "style": {
+        "guide-title": {"font": "Source Sans Pro, sans-serif", "fontSize": 15},
+        "text": {
+          "font": "Source Sans Pro, sans-serif",
+          "fontWeight": "normal",
+          "size": 14
+        },
+        "legend": {"legendFont": "Source Sans Pro, sans-serif"}
+      },
+      "background": "#ffede8"
+    }
+  }

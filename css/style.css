@@ -1,0 +1,34 @@
+  .bg1 {
+    background-color: #ffede8;
+  }
+  
+  .bg2 {
+    background-color: #ffede8;
+  }
+  
+  .bg3 {
+      background-color: #9dc5d2;
+  }
+      
+  body {
+    font-size: large;
+    font-family: 'Inter', sans-serif !important;
+    background-color: #ffede8;
+  }
+  
+  .vega-bind-name {
+    padding: 5px;
+  }
+  
+  #main-title {
+    font-family: "Sora", sans-serif;
+    font-size: 4em;
+  }
+  
+  .container {
+    border: 1px solid;
+  }
+
+  #title {
+    color: rgb(228, 0, 0);
+  }

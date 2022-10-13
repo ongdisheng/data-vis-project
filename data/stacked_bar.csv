@@ -1,0 +1,375 @@
+,country,continent,gender,deaths
+0,Afghanistan,Asia,Girl,6.379999923706055
+1,Albania,Europe,Girl,0.8600000381469727
+2,Algeria,Africa,Girl,2.3299999237060547
+3,Andorra,Europe,Girl,0.2799999952316284
+4,Angola,Africa,Girl,7.75999984741211
+5,Antigua and Barbuda,North America,Girl,0.6800000190734864
+6,Argentina,South America,Girl,0.9699999809265136
+7,Armenia,Asia,Girl,1.1899999618530277
+8,Australia,Oceania,Girl,0.35
+9,Austria,Europe,Girl,0.3299999952316284
+10,Azerbaijan,Asia,Girl,2.2
+11,Bahamas,North America,Girl,1.2699999809265137
+12,Bahrain,Asia,Girl,0.7199999809265137
+13,Bangladesh,Asia,Girl,3.4000000000000004
+14,Barbados,North America,Girl,1.2399999618530275
+15,Belarus,Europe,Girl,0.3400000095367432
+16,Belgium,Europe,Girl,0.3599999904632568
+17,Belize,North America,Girl,1.3100000381469727
+18,Benin,Africa,Girl,8.890000152587891
+19,Bhutan,Asia,Girl,2.9000000000000004
+20,Bolivia,South America,Girl,2.7
+21,Bosnia and Herzegovina,Europe,Girl,0.55
+22,Botswana,Africa,Girl,4.479999923706055
+23,Brazil,South America,Girl,1.4899999618530275
+24,Brunei,Asia,Girl,0.9800000190734864
+25,Bulgaria,Europe,Girl,0.7000000000000001
+26,Burkina Faso,Africa,Girl,9.240000152587893
+27,Burundi,Africa,Girl,5.909999847412109
+28,Cambodia,Asia,Girl,2.6700000762939453
+29,Cameroon,Africa,Girl,7.75999984741211
+30,Canada,North America,Girl,0.4900000095367431
+31,Cape Verde,Africa,Girl,1.6299999237060547
+32,Central African Republic,Africa,Girl,11.15999984741211
+33,Chad,Africa,Girl,11.76999969482422
+34,Chile,South America,Girl,0.7000000000000001
+35,China,Asia,Girl,0.9300000190734864
+36,Colombia,South America,Girl,1.3300000190734864
+37,Comoros,Africa,Girl,6.440000152587891
+38,Costa Rica,North America,Girl,0.8199999809265137
+39,Croatia,Europe,Girl,0.4400000095367432
+40,Cuba,North America,Girl,0.5
+41,Cyprus,Europe,Girl,0.2599999904632568
+42,Denmark,Europe,Girl,0.3700000047683716
+43,Djibouti,Africa,Girl,5.820000076293946
+44,Dominica,North America,Girl,3.029999923706055
+45,Dominican Republic,North America,Girl,3.189999961853028
+46,Ecuador,South America,Girl,1.3100000381469727
+47,Egypt,Africa,Girl,2.1
+48,El Salvador,North America,Girl,1.3300000190734864
+49,Equatorial Guinea,Africa,Girl,8.35
+50,Eritrea,Africa,Girl,3.920000076293945
+51,Estonia,Europe,Girl,0.25
+52,Eswatini,Africa,Girl,5.05999984741211
+53,Ethiopia,Africa,Girl,5.240000152587891
+54,Fiji,Oceania,Girl,2.289999961853028
+55,Finland,Europe,Girl,0.2200000047683716
+56,France,Europe,Girl,0.3799999952316284
+57,Gabon,Africa,Girl,4.25999984741211
+58,Gambia,Africa,Girl,5.20999984741211
+59,Georgia,Asia,Girl,0.9
+60,Germany,Europe,Girl,0.3599999904632568
+61,Ghana,Africa,Girl,4.7
+62,Greece,Europe,Girl,0.4
+63,Grenada,North America,Girl,1.5100000381469727
+64,Guatemala,North America,Girl,2.439999961853028
+65,Guinea,Africa,Girl,9.80999984741211
+66,Guinea-Bissau,Africa,Girl,8.169999694824218
+67,Guyana,South America,Girl,2.8000000000000003
+68,Haiti,North America,Girl,6.2
+69,Honduras,North America,Girl,1.65
+70,Hungary,Europe,Girl,0.4300000190734863
+71,Iceland,Europe,Girl,0.2
+72,India,Asia,Girl,4.220000076293945
+73,Indonesia,Asia,Girl,2.370000076293945
+74,Iran,Asia,Girl,1.4199999809265138
+75,Iraq,Asia,Girl,2.589999961853028
+76,Ireland,Europe,Girl,0.3299999952316284
+77,Israel,Asia,Girl,0.3599999904632568
+78,Italy,Europe,Girl,0.3099999904632569
+79,Jamaica,North America,Girl,1.3199999809265135
+80,Japan,Asia,Girl,0.25
+81,Jordan,Asia,Girl,1.5300000190734864
+82,Kazakhstan,Asia,Girl,0.95
+83,Kenya,Africa,Girl,4.30999984741211
+84,Kiribati,Oceania,Girl,5.1099998474121096
+85,Kuwait,Asia,Girl,0.7900000095367432
+86,Kyrgyzstan,Asia,Girl,1.8700000762939453
+87,Laos,Asia,Girl,4.629999923706055
+88,Latvia,Europe,Girl,0.4300000190734863
+89,Lebanon,Asia,Girl,0.7599999904632568
+90,Lesotho,Africa,Girl,8.34000015258789
+91,Liberia,Africa,Girl,7.969999694824219
+92,Libya,Africa,Girl,1.1399999618530274
+93,Lithuania,Europe,Girl,0.4300000190734863
+94,Luxembourg,Europe,Girl,0.25
+95,Madagascar,Africa,Girl,5.220000076293946
+96,Malawi,Africa,Girl,4.440000152587891
+97,Malaysia,Asia,Girl,0.75
+98,Maldives,Asia,Girl,0.8199999809265137
+99,Mali,Africa,Girl,9.85999984741211
+100,Malta,Europe,Girl,0.6000000000000001
+101,Marshall Islands,Oceania,Girl,3.0500000000000003
+102,Mauritania,Africa,Girl,7.380000305175781
+103,Mauritius,Africa,Girl,1.3100000381469727
+104,Mexico,North America,Girl,1.4100000381469728
+105,Moldova,Europe,Girl,1.3699999809265138
+106,Monaco,Europe,Girl,0.3099999904632569
+107,Mongolia,Asia,Girl,1.6299999237060547
+108,Montenegro,Europe,Girl,0.3299999952316284
+109,Morocco,Africa,Girl,2.0
+110,Mozambique,Africa,Girl,7.540000152587891
+111,Myanmar,Asia,Girl,4.55999984741211
+112,Namibia,Africa,Girl,4.209999847412109
+113,Nauru,Oceania,Girl,2.879999923706055
+114,Nepal,Asia,Girl,3.129999923706055
+115,Netherlands,Europe,Girl,0.3599999904632568
+116,New Zealand,Oceania,Girl,0.4800000190734863
+117,Nicaragua,North America,Girl,1.6399999618530274
+118,Niger,Africa,Girl,8.59000015258789
+119,Nigeria,Africa,Girl,11.790000152587892
+120,North Korea,Asia,Girl,1.7799999237060549
+121,North Macedonia,Europe,Girl,1.0100000381469727
+122,Norway,Europe,Girl,0.2400000095367431
+123,Oman,Asia,Girl,1.0100000381469727
+124,Pakistan,Asia,Girl,6.9
+125,Palau,Oceania,Girl,1.7000000000000002
+126,Palestine,Asia,Girl,1.7000000000000002
+127,Panama,North America,Girl,1.4600000381469729
+128,Papua New Guinea,Oceania,Girl,4.579999923706055
+129,Paraguay,South America,Girl,1.9399999618530277
+130,Peru,South America,Girl,1.35
+131,Philippines,Asia,Girl,2.6
+132,Poland,Europe,Girl,0.4300000190734863
+133,Portugal,Europe,Girl,0.3299999952316284
+134,Qatar,Asia,Girl,0.6800000190734864
+135,Romania,Europe,Girl,0.7599999904632568
+136,Russia,Europe,Girl,0.6699999809265137
+137,Rwanda,Africa,Girl,4.209999847412109
+138,Saint Kitts and Nevis,North America,Girl,1.4899999618530275
+139,Saint Lucia,North America,Girl,2.039999961853028
+140,Saint Vincent and the Grenadines,North America,Girl,1.4699999809265138
+141,Samoa,Oceania,Girl,1.65
+142,San Marino,Europe,Girl,0.1899999976158142
+143,Sao Tome and Principe,Africa,Girl,1.8799999237060547
+144,Saudi Arabia,Asia,Girl,0.8300000190734864
+145,Senegal,Africa,Girl,4.209999847412109
+146,Serbia,Europe,Girl,0.5400000095367432
+147,Seychelles,Africa,Girl,1.3699999809265138
+148,Sierra Leone,Africa,Girl,11.780000305175784
+149,Singapore,Asia,Girl,0.25
+150,Slovakia,Europe,Girl,0.55
+151,Slovenia,Europe,Girl,0.2299999952316284
+152,Solomon Islands,Oceania,Girl,1.9899999618530275
+153,Somalia,Africa,Girl,12.36999969482422
+154,South Africa,Africa,Girl,3.240000152587891
+155,South Korea,Asia,Girl,0.3099999904632569
+156,South Sudan,Africa,Girl,9.390000152587891
+157,Spain,Europe,Girl,0.3
+158,Sri Lanka,Asia,Girl,0.7400000095367432
+159,Sudan,Africa,Girl,5.8500000000000005
+160,Suriname,South America,Girl,1.7399999618530275
+161,Sweden,Europe,Girl,0.2599999904632568
+162,Switzerland,Europe,Girl,0.3900000095367432
+163,Syria,Asia,Girl,3.740000152587891
+164,Tajikistan,Asia,Girl,3.189999961853028
+165,Tanzania,Africa,Girl,5.2
+166,Thailand,Asia,Girl,0.9199999809265136
+167,Togo,Africa,Girl,6.790000152587891
+168,Tonga,Oceania,Girl,1.0800000190734864
+169,Trinidad and Tobago,North America,Girl,1.6899999618530277
+170,Tunisia,Africa,Girl,1.5600000381469727
+171,Turkey,Asia,Girl,1.1399999618530274
+172,Turkmenistan,Asia,Girl,3.65
+173,Tuvalu,Oceania,Girl,2.2399999618530275
+174,Uganda,Africa,Girl,4.709999847412109
+175,Ukraine,Europe,Girl,0.8199999809265137
+176,United Arab Emirates,Asia,Girl,0.6599999904632569
+177,United Kingdom,Europe,Girl,0.4
+178,United States,North America,Girl,0.6099999904632569
+179,Uruguay,South America,Girl,0.75
+180,Uzbekistan,Asia,Girl,1.5399999618530271
+181,Vanuatu,Oceania,Girl,2.529999923706055
+182,Venezuela,South America,Girl,2.2200000762939456
+183,Vietnam,Asia,Girl,1.7799999237060549
+184,Yemen,Asia,Girl,5.6200000762939455
+185,Zambia,Africa,Girl,6.0
+186,Zimbabwe,Africa,Girl,5.3500000000000005
+187,Afghanistan,Asia,Boy,7.1000000000000005
+188,Albania,Europe,Boy,1.0199999809265137
+189,Algeria,Africa,Boy,2.620000076293945
+190,Andorra,Europe,Boy,0.35
+191,Angola,Africa,Boy,9.01999969482422
+192,Antigua and Barbuda,North America,Boy,0.8
+193,Argentina,South America,Boy,1.2000000000000002
+194,Armenia,Asia,Boy,1.4800000190734863
+195,Australia,Oceania,Boy,0.4099999904632568
+196,Austria,Europe,Boy,0.3900000095367432
+197,Azerbaijan,Asia,Boy,2.6799999237060548
+198,Bahamas,North America,Boy,1.4600000381469729
+199,Bahrain,Asia,Boy,0.7699999809265137
+200,Bangladesh,Asia,Boy,3.8099998474121097
+201,Barbados,North America,Boy,1.4899999618530275
+202,Belarus,Europe,Boy,0.4300000190734863
+203,Belgium,Europe,Boy,0.45
+204,Belize,North America,Boy,1.5800000190734864
+205,Benin,Africa,Boy,10.15
+206,Bhutan,Asia,Boy,3.4700000762939456
+207,Bolivia,South America,Boy,3.259999847412109
+208,Bosnia and Herzegovina,Europe,Boy,0.6800000190734864
+209,Botswana,Africa,Boy,5.320000076293946
+210,Brazil,South America,Boy,1.85
+211,Brunei,Asia,Boy,1.1800000190734865
+212,Bulgaria,Europe,Boy,0.8500000000000001
+213,Burkina Faso,Africa,Boy,10.230000305175782
+214,Burundi,Africa,Boy,6.930000305175781
+215,Cambodia,Asia,Boy,3.370000076293945
+216,Cameroon,Africa,Boy,9.03000030517578
+217,Canada,North America,Boy,0.5699999809265137
+218,Cape Verde,Africa,Boy,1.9799999237060548
+219,Central African Republic,Africa,Boy,12.440000152587892
+220,Chad,Africa,Boy,13.189999389648438
+221,Chile,South America,Boy,0.8300000190734864
+222,China,Asia,Boy,1.05
+223,Colombia,South America,Boy,1.6600000381469728
+224,Comoros,Africa,Boy,7.540000152587891
+225,Costa Rica,North America,Boy,0.95
+226,Croatia,Europe,Boy,0.5300000190734864
+227,Cuba,North America,Boy,0.6099999904632569
+228,Cyprus,Europe,Boy,0.3099999904632569
+229,Denmark,Europe,Boy,0.4400000095367432
+230,Djibouti,Africa,Boy,6.9
+231,Dominica,North America,Boy,3.529999923706055
+232,Dominican Republic,North America,Boy,3.790000152587891
+233,Ecuador,South America,Boy,1.65
+234,Egypt,Africa,Boy,2.379999923706055
+235,El Salvador,North America,Boy,1.6399999618530274
+236,Equatorial Guinea,Africa,Boy,9.630000305175782
+237,Eritrea,Africa,Boy,5.00999984741211
+238,Estonia,Europe,Boy,0.3099999904632569
+239,Eswatini,Africa,Boy,6.020000076293946
+240,Ethiopia,Africa,Boy,6.530000305175782
+241,Fiji,Oceania,Boy,2.6799999237060548
+242,Finland,Europe,Boy,0.2700000047683716
+243,France,Europe,Boy,0.4599999904632568
+244,Gabon,Africa,Boy,5.2
+245,Gambia,Africa,Boy,6.25
+246,Georgia,Asia,Boy,1.1300000190734865
+247,Germany,Europe,Boy,0.4199999809265137
+248,Ghana,Africa,Boy,5.720000076293946
+249,Greece,Europe,Boy,0.4699999809265137
+250,Grenada,North America,Boy,1.7700000762939454
+251,Guatemala,North America,Boy,3.010000038146973
+252,Guinea,Africa,Boy,11.080000305175782
+253,Guinea-Bissau,Africa,Boy,9.540000152587892
+254,Guyana,South America,Boy,3.6099998474121096
+255,Haiti,North America,Boy,7.359999847412109
+256,Honduras,North America,Boy,2.0600000381469727
+257,Hungary,Europe,Boy,0.5099999904632568
+258,Iceland,Europe,Boy,0.2400000095367431
+259,India,Asia,Boy,3.979999923706055
+260,Indonesia,Asia,Boy,2.939999961853028
+261,Iran,Asia,Boy,1.5600000381469727
+262,Iraq,Asia,Boy,3.1500000000000004
+263,Ireland,Europe,Boy,0.3900000095367432
+264,Israel,Asia,Boy,0.4099999904632568
+265,Italy,Europe,Boy,0.3700000047683716
+266,Jamaica,North America,Boy,1.6799999237060548
+267,Japan,Asia,Boy,0.2799999952316284
+268,Jordan,Asia,Boy,1.85
+269,Kazakhstan,Asia,Boy,1.25
+270,Kenya,Africa,Boy,5.1200000762939455
+271,Kiribati,Oceania,Boy,6.070000076293946
+272,Kuwait,Asia,Boy,0.9399999618530274
+273,Kyrgyzstan,Asia,Boy,2.360000038146973
+274,Laos,Asia,Boy,5.65
+275,Latvia,Europe,Boy,0.5
+276,Lebanon,Asia,Boy,0.8399999618530274
+277,Lesotho,Africa,Boy,9.9
+278,Liberia,Africa,Boy,9.21999969482422
+279,Libya,Africa,Boy,1.4100000381469728
+280,Lithuania,Europe,Boy,0.5199999809265137
+281,Luxembourg,Europe,Boy,0.3099999904632569
+282,Madagascar,Africa,Boy,6.2
+283,Malawi,Africa,Boy,5.429999923706055
+284,Malaysia,Asia,Boy,0.8800000190734864
+285,Maldives,Asia,Boy,0.9899999618530274
+286,Mali,Africa,Boy,11.00999984741211
+287,Malta,Europe,Boy,0.7099999904632569
+288,Marshall Islands,Oceania,Boy,3.8200000762939457
+289,Mauritania,Africa,Boy,8.61999969482422
+290,Mauritius,Africa,Boy,1.5899999618530274
+291,Mexico,North America,Boy,1.7100000381469729
+292,Moldova,Europe,Boy,1.7200000762939454
+293,Monaco,Europe,Boy,0.3799999952316284
+294,Mongolia,Asia,Boy,2.0600000381469727
+295,Montenegro,Europe,Boy,0.3799999952316284
+296,Morocco,Africa,Boy,2.45
+297,Mozambique,Africa,Boy,8.5
+298,Myanmar,Asia,Boy,5.479999923706055
+299,Namibia,Africa,Boy,5.029999923706055
+300,Nauru,Oceania,Boy,3.540000152587891
+301,Nepal,Asia,Boy,3.6099998474121096
+302,Netherlands,Europe,Boy,0.4400000095367432
+303,New Zealand,Oceania,Boy,0.5800000190734863
+304,Nicaragua,North America,Boy,2.0799999237060547
+305,Niger,Africa,Boy,9.4
+306,Nigeria,Africa,Boy,13.11999969482422
+307,North Korea,Asia,Boy,2.2100000381469727
+308,North Macedonia,Europe,Boy,1.1699999809265138
+309,Norway,Europe,Boy,0.2900000095367431
+310,Oman,Asia,Boy,1.2199999809265138
+311,Pakistan,Asia,Boy,7.840000152587891
+312,Palau,Oceania,Boy,2.120000076293945
+313,Palestine,Asia,Boy,2.0200000762939454
+314,Panama,North America,Boy,1.8100000381469727
+315,Papua New Guinea,Oceania,Boy,5.329999923706055
+316,Paraguay,South America,Boy,2.379999923706055
+317,Peru,South America,Boy,1.6399999618530274
+318,Philippines,Asia,Boy,3.2099998474121096
+319,Poland,Europe,Boy,0.5099999904632568
+320,Portugal,Europe,Boy,0.4
+321,Qatar,Asia,Boy,0.7900000095367432
+322,Romania,Europe,Boy,0.9300000190734864
+323,Russia,Europe,Boy,0.8300000190734864
+324,Rwanda,Africa,Boy,4.970000076293946
+325,Saint Kitts and Nevis,North America,Boy,1.8200000762939452
+326,Saint Lucia,North America,Boy,2.4299999237060548
+327,Saint Vincent and the Grenadines,North America,Boy,1.7600000381469727
+328,Samoa,Oceania,Boy,2.010000038146973
+329,San Marino,Europe,Boy,0.2299999952316284
+330,Sao Tome and Principe,Africa,Boy,2.35
+331,Saudi Arabia,Asia,Boy,0.8800000190734864
+332,Senegal,Africa,Boy,5.05999984741211
+333,Serbia,Europe,Boy,0.6599999904632569
+334,Seychelles,Africa,Boy,1.5899999618530274
+335,Sierra Leone,Africa,Boy,13.260000610351565
+336,Singapore,Asia,Boy,0.2900000095367431
+337,Slovakia,Europe,Boy,0.6699999809265137
+338,Slovenia,Europe,Boy,0.2700000047683716
+339,Solomon Islands,Oceania,Boy,2.4000000000000004
+340,Somalia,Africa,Boy,13.65
+341,South Africa,Africa,Boy,3.790000152587891
+342,South Korea,Asia,Boy,0.3700000047683716
+343,South Sudan,Africa,Boy,10.26999969482422
+344,Spain,Europe,Boy,0.3599999904632568
+345,Sri Lanka,Asia,Boy,0.9100000381469728
+346,Sudan,Africa,Boy,6.909999847412109
+347,Suriname,South America,Boy,2.2100000381469727
+348,Sweden,Europe,Boy,0.3099999904632569
+349,Switzerland,Europe,Boy,0.45
+350,Syria,Asia,Boy,4.14000015258789
+351,Tajikistan,Asia,Boy,4.079999923706055
+352,Tanzania,Africa,Boy,5.979999923706055
+353,Thailand,Asia,Boy,1.1399999618530274
+354,Togo,Africa,Boy,7.8699996948242195
+355,Tonga,Oceania,Boy,1.3699999809265138
+356,Trinidad and Tobago,North America,Boy,2.0600000381469727
+357,Tunisia,Africa,Boy,1.85
+358,Turkey,Asia,Boy,1.2800000190734864
+359,Turkmenistan,Asia,Boy,4.829999923706055
+360,Tuvalu,Oceania,Boy,2.7700000762939454
+361,Uganda,Africa,Boy,5.75999984741211
+362,Ukraine,Europe,Boy,1.0100000381469727
+363,United Arab Emirates,Asia,Boy,0.8199999809265137
+364,United Kingdom,Europe,Boy,0.4800000190734863
+365,United States,North America,Boy,0.7300000190734863
+366,Uruguay,South America,Boy,0.9300000190734864
+367,Uzbekistan,Asia,Boy,2.039999961853028
+368,Vanuatu,Oceania,Boy,2.9700000762939456
+369,Venezuela,South America,Boy,2.620000076293945
+370,Vietnam,Asia,Boy,2.5200000762939454
+371,Yemen,Asia,Boy,6.440000152587891
+372,Zambia,Africa,Boy,7.040000152587891
+373,Zimbabwe,Africa,Boy,6.3599998474121096

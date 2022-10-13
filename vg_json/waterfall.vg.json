@@ -1,0 +1,174 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/waterfall.csv"
+    },
+    "width": "container",
+    "height": 450,
+    "transform": [
+      {"window": [{"op": "sum", "field": "amount", "as": "sum"}]},
+      {"window": [{"op": "lead", "field": "label", "as": "lead"}]},
+      {
+        "calculate": "datum.lead === null ? datum.label : datum.lead",
+        "as": "lead"
+      },
+      {
+        "calculate": "datum.label === '2016' ? 0 : datum.sum - datum.amount",
+        "as": "previous_sum"
+      },
+      {
+        "calculate": "datum.label === '2016' ? datum.sum : datum.amount",
+        "as": "amount"
+      },
+      {
+        "calculate": "(datum.label !== '2000' && datum.label !== '2016' && datum.amount > 0 ? '+' : '') + datum.amount",
+        "as": "text_amount"
+      },
+      {"calculate": "(datum.sum + datum.previous_sum) / 2", "as": "center"},
+      {
+        "calculate": "datum.sum < datum.previous_sum ? datum.sum : ''",
+        "as": "sum_dec"
+      },
+      {
+        "calculate": "datum.sum > datum.previous_sum ? datum.sum : ''",
+        "as": "sum_inc"
+      }
+    ],
+    "encoding": {
+      "x": {
+        "field": "label",
+        "type": "ordinal",
+        "sort": null,
+        "axis": {"labelAngle": 0, "title": "Year", "tickCount": 5}
+      }
+    },
+    "layer": [
+      {
+        "params": [
+          {"name": "hover", "select": {"type": "point", "on": "mouseover"}}
+        ],
+        "mark": {"type": "bar", "size": 45, "stroke": "black"},
+        "encoding": {
+          "y": {
+            "field": "previous_sum",
+            "type": "quantitative",
+            "title": "Child Deaths"
+          },
+          "y2": {"field": "sum"},
+          "color": {
+            "condition": [
+              {
+                "test": "datum.label === '2000' || datum.label === '2016'",
+                "value": "#f7e0b6"
+              },
+              {"test": "datum.sum < datum.previous_sum", "value": "#f78a64"}
+            ],
+            "value": "#93c4aa"
+          },
+          "tooltip": [
+            {"field": "label", "type": "ordinal", "title": "Year"},
+            {"field": "mortality", "type": "quantitative", "title": "Child Deaths", "format": ","}
+          ],
+          "strokeWidth": {
+            "condition": [{"param": "hover", "empty": false, "value": 1}],
+            "value": 0.2
+          },
+          "opacity": {"condition": {"param": "hover", "value": 1}, "value": 0.5}
+        }
+      },
+      {
+        "mark": {
+          "type": "rule",
+          "color": "#404040",
+          "opacity": 1,
+          "strokeWidth": 2,
+          "xOffset": -22.5,
+          "x2Offset": 22.5
+        },
+        "encoding": {
+          "x2": {"field": "lead"},
+          "y": {"field": "sum", "type": "quantitative"}
+        }
+      },
+      {
+        "mark": {"type": "text", "dy": -4, "baseline": "bottom"},
+        "encoding": {
+          "y": {"field": "sum_inc", "type": "quantitative"},
+          "text": {"field": "sum_inc", "type": "nominal"}
+        }
+      },
+      {
+        "mark": {"type": "text", "dy": 4, "baseline": "top"},
+        "encoding": {
+          "y": {"field": "sum_dec", "type": "quantitative"},
+          "text": {"field": "sum_dec", "type": "nominal"}
+        }
+      },
+      {
+        "mark": {"type": "text", "fontWeight": "bold", "baseline": "middle"},
+        "encoding": {
+          "y": {"field": "center", "type": "quantitative"},
+          "text": {"field": "text_amount", "type": "nominal"},
+          "color": {
+            "condition": [
+              {
+                "test": "datum.label === '2000' || datum.label === '2016'",
+                "value": "#725a30"
+              }
+            ],
+            "value": "white"
+          }
+        }
+      },
+      {
+        "transform": [
+          {"filter": "datum.label == '2015'"},
+          {
+            "calculate": "'Ebola virus outbreak'",
+            "as": "text_annotation"
+          }
+        ],
+        "mark": {"type": "text", "fontWeight": "bold", "dx": -35, "dy": -150, "color": "red", "fontSize": 18},
+        "encoding": {
+          "text": {"field": "text_annotation"}
+        }
+      },
+      {
+        "data": {"values": [{"year": "2013"}]},
+        "encoding": {"x": {"field": "year", "type": "ordinal"}},
+        "layer": [
+          {
+            "mark": "rule",
+            "encoding": {"size": {"value": 1.5}, "color": {"value": "red"}}
+          }
+        ]
+      }
+    ],
+    "config": {
+      "text": {"fontWeight": "bold", "color": "#404040"},
+      "axis": {
+        "labelFont": "Source Sans Pro, sans-serif",
+        "labelColor": "black",
+        "titleColor": "black",
+        "titleFontSize": 16,
+        "gridColor": "lighter",
+        "labelFontSize": 13,
+        "labelLimit": 500
+      },
+      "title": {
+        "fontSize": 15,
+        "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5}
+      },
+      "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5},
+      "style": {
+        "guide-title": {"font": "Source Sans Pro, sans-serif", "fontSize": 15},
+        "text": {
+          "font": "Source Sans Pro, sans-serif",
+          "fontWeight": "normal",
+          "size": 14
+        },
+        "legend": {"legendFont": "Source Sans Pro, sans-serif"}
+      },
+      "background": "#ffede8"
+    }
+  }

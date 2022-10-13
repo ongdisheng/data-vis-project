@@ -1,0 +1,155 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "../data/multi_view_2b.csv"
+    },
+    "vconcat": [
+      {
+        "hconcat": [
+          {
+            "height": 350,
+            "width": 1200,
+            "mark": "bar",
+            "params": [
+              {
+                "name": "continent",
+                "select": {"type": "point", "fields": ["Continent"]},
+                "bind": "legend"
+              }
+            ],
+            "transform": [
+                {"filter": {"param": "time_brush"}}
+            ],
+            "encoding": {
+              "x": {
+                "field": "Continent",
+                "type": "nominal",
+                "axis": null
+              },
+              "y": {
+                "aggregate": "average",
+                "field": "mortality_rate",
+                "type": "quantitative",
+                "title": "Average Child Mortality Rate"
+              },
+              "color": {
+                "field": "Continent",
+                "title": "",
+                "scale": {
+                  "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+                  "range": ["#76b7b2", "#f28e2b", "#4e79a7", "#9c755f", "#e15759", "#edc948"]
+                },
+                "legend": {
+                  "columnPadding": 40,
+                  "titlePadding": 10,
+                  "title": "Continent",
+                  "orient": "top",
+                  "titleFontSize": 20,
+                  "titleFont": "Source Sans Pro,sans-serif",
+                  "titleLimit": 500,
+                  "columns": 0
+                }
+              },
+              "tooltip": [
+                {"field": "Continent", "title": "Continent"},
+                {
+                  "aggregate": "mean",
+                  "field": "mortality_rate",
+                  "title": "Average Child Mortality Rate",
+                  "format": ".2f"
+                }
+              ],
+              "opacity": {
+                "condition": {"param": "continent", "value": 1},
+                "value": 0.4
+              }
+            }
+          }
+        ]
+      },
+      {
+        "height": 200,
+        "width": 1200,
+        "mark": {
+            "type": "area",
+            "line": {
+                "color": "darkgreen"
+            },
+            "color": {
+                "x1": 1,
+                "y1": 1,
+                "x2": 1,
+                "y2": 0,
+                "gradient": "linear",
+                "stops": [
+                  {
+                    "offset": 0,
+                    "color": "white"
+                  },
+                  {
+                    "offset": 1,
+                    "color": "darkgreen"
+                  }
+                ]
+            }
+        },
+        "transform": [
+        ],
+        "params": [
+          {
+            "name": "time_brush",
+            "select": {"type": "interval", "encodings": ["x"]}
+          }
+        ],
+        "encoding": {
+          "x": {"field": "year", "type": "nominal", "title": "Year"},
+          "y": {
+            "aggregate": "mean",
+            "field": "mortality_rate",
+            "title": "Child Mortality Rate"
+          },
+          "tooltip": [
+            {"field": "year", "title": "Year"},
+            {
+              "aggregate": "mean",
+              "field": "mortality_rate",
+              "title": "Child Mortality Rate",
+              "format": ".2f"
+            }
+          ]
+        }
+      }
+    ],
+    "config": {
+      "axis": {
+        "labelFont": "Source Sans Pro, sans-serif",
+        "labelAngle": 0,
+        "labelColor": "black",
+        "titleColor": "black",
+        "gridColor": "lighter",
+        "labelFontSize": 14,
+        "labelLimit": 500
+      },
+      "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5},
+      "style": {
+        "guide-title": {
+          "font": "Source Sans Pro, sans-serif",
+          "limit": 400,
+          "fontSize": 15
+        },
+        "text": {
+          "font": "Source Sans Pro, sans-serif",
+          "fontWeight": "normal",
+          "size": 14
+        }
+      },
+      "legend": {
+        "columns": 5,
+        "labelLimit": 300,
+        "labelFontSize": 16,
+        "labelFont": "Source Sans Pro, sans-serif",
+        "labelPadding": 4,
+        "rowPadding": 6
+      }
+    }
+  }

@@ -1,0 +1,192 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 700,
+    "height": 600,
+    "title": "Child mortality rate vs prevalence of teenage pregnancy",
+    "data": {
+      "url": "https://raw.githubusercontent.com/ongdisheng/FIT3179/main/project2/data/bubble_plot_preg.csv"
+    },
+    "params": [
+      {
+        "name": "Year",
+        "value": 1990,
+        "bind": {
+          "input": "range",
+          "min": 1990,
+          "max": 2016,
+          "step": 1,
+          "name": "Year: "
+        } 
+      },
+      {
+        "name": "Population_Above",
+        "value": 0,
+        "bind": {
+          "input": "range",
+          "min": 0,
+          "max": 100000000,
+          "step": 1000000,
+          "name": "Minimum Population: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.teen_pregnancy > 0"},
+      {"filter": "datum.mortality_rate > 0"},
+      {"filter": "datum.population > Population_Above"},
+      {"filter": "datum.year == Year"}
+    ],
+    "layer": [
+      {
+        "transform": [
+          {"filter": {"param": "Year"}}
+        ],
+        "mark": {
+          "type": "text",
+          "fontSize": 80,
+          "x": 580,
+          "y": 50,
+          "opacity": 0.05,
+          "color": "lightgray"
+        },
+        "encoding": {"text": {"field": "year"}}
+      },
+      {
+        "encoding": {
+          "x": {
+            "field": "teen_pregnancy",
+            "type": "quantitative",
+            "title": "Teenage mothers (% of women aged 15-19)",
+            "axis": {"tickCount": 3},
+            "scale": {"type": "log", "domain": [1, 1000]}
+          },
+          "y": {
+            "field": "mortality_rate",
+            "type": "quantitative",
+            "title": "Child mortality rate",
+            "axis": {"tickCount": 3},
+            "scale": {"type": "log", "domain": [0.1, 100]}
+          }
+        },
+        "layer": [
+          {
+            "params": [
+              {
+                "name": "continent_highlight",
+                "select": {"type": "point", "fields": ["continent"]},
+                "bind": "legend"
+              }
+            ],
+            "mark": "circle",
+            "encoding": {
+              "size": {
+                "field": "population",
+                "type": "quantitative",
+                "scale": {
+                  "type": "threshold",
+                  "domain": [10000000, 100000000, 300000000, 700000000, 800000000],
+                  "range": [200, 400, 800, 1200, 1600, 2500]
+                },
+                "legend": {
+                    "format": ".1s",
+                    "title": "Population"
+                }
+              },
+              "color": {
+                "field": "continent",
+                "type": "nominal",
+                "legend": {
+                    "title": "Continent"
+                },
+                "scale": {
+                  "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+                  "range": ["#76b7b2", "#f28e2b", "#4e79a7", "#9c755f", "#e15759", "#edc948"]
+                }
+              },
+              "opacity": {
+                "condition": {"selection": "continent_highlight", "value": 0.8},
+                "value": 0.1
+              },
+              "tooltip": [
+                {"field": "country", "type": "nominal", "title": "Country"},
+                {"field": "population", "type": "quantitative", "title": "Population"},
+                {"field": "teen_pregnancy", "type": "quantitative", "format": ".2f", "title": "Teenage Pregnancy"},
+                {"field": "mortality", "type": "quantitative", "format": ",", "title": "Number Of Child Deaths"},
+                {"field": "mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate Per 1,000 Live Births"}
+              ]
+            }
+          },
+          {
+            "transform": [
+              {
+                "filter": {
+                  "field": "country",
+                  "oneOf": [
+                    "China",
+                    "United States",
+                    "Pakistan",
+                    "Nigeria",
+                    "Japan",
+                    "Malaysia"
+                  ]
+                }
+              }
+            ],
+            "mark": {"type": "text", "dy": 15},
+            "encoding": {
+              "text": {"field": "country", "type": "nominal"},
+              "color": {"value": "black"},
+              "opacity": {
+                "condition": {"param": "continent_highlight", "value": 1}, "value": 0.1
+              },
+              "tooltip": [
+                {"field": "country", "type": "nominal", "title": "Country"},
+                {"field": "population", "type": "quantitative", "title": "Population"},
+                {"field": "teen_pregnancy", "type": "quantitative", "format": ".2f", "title": "Teenage Pregnancy"},
+                {"field": "mortality", "type": "quantitative", "format": ",", "title": "Number Of Child Deaths"},
+                {"field": "mortality_rate", "type": "quantitative", "format": ".2f", "title": "Child Mortality Rate Per 1,000 Live Births"}
+              ]
+            }
+          },
+          {
+            "transform": [
+              {"filter": "datum.country == 'Japan'"},
+              {
+                "calculate": "'Japan has the lowest lb teenage pregnancy rate lb across Asia'",
+                "as": "text_annotation"
+              }
+            ],
+            "mark": {"type": "text", "fontWeight": "bold", "dx": 0, "dy": 35},
+            "encoding": {
+              "text": {"field": "text_annotation"},
+              "color": {"value": "#e15759"},
+              "size": {"value": 15}
+            }
+          }
+        ]
+      }
+    ],
+    "config": {
+      "axis": {
+        "labelColor": "black",
+        "titleColor": "black",
+        "gridColor": "lighter"
+      },
+      "autosize": {"type": "pad"},
+      "lineBreak": "lb",
+      "title": {
+        "fontSize": 15,
+        "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5}
+      },
+      "padding": {"left": 5, "top": 5, "right": 5, "bottom": 5},
+      "style": {
+        "guide-title": {"font": "Source Sans Pro, sans-serif", "fontSize": 15},
+        "text": {
+          "font": "Source Sans Pro, sans-serif",
+          "fontWeight": "normal",
+          "size": 14
+        }
+      },
+      "legend": {"columns": 1, "labelLimit": 300}
+    }
+  }

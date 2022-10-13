@@ -1,0 +1,63 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple donut chart with embedded data.",
+    "data": {
+        "url": "../data/multi_view.csv"
+    },
+    "title": "Day 0 - 28",
+    "transform": [
+        {
+          "filter": "datum.life_stage == 'day29_1'"
+        }
+    ],
+    "params": [
+        {
+            "name": "highlight",
+            "select": {"type": "point", "on": "mouseover"}
+          },
+          {"name": "select", "select": "point"}
+    ],
+    "mark": {"type": "arc", "innerRadius": 50, "stroke": "black"},
+    "encoding": {
+      "theta": {"aggregate": "mean", "field": "deaths", "type": "quantitative"},
+      "color": {
+        "field": "continent", "type": "nominal",
+        "legend": {
+            "title": "Continent"
+        },
+        "scale": {
+            "domain": ["North America", "South America", "Europe", "Africa", "Asia", "Oceania"],
+            "range": ["#76b7b2", "#f28e2b", "#4e79a7", "#9c755f", "#e15759", "#edc948"]
+        }
+      },
+      "tooltip": [
+        {"field": "continent", "title": "Continent"},
+        {
+          "aggregate": "mean",
+          "field": "deaths",
+          "title": "Average Child Deaths",
+          "format": ",.2f"
+        }
+      ],
+      "fillOpacity": {
+        "condition": {"param": "select", "value": 1},
+        "value": 0.3
+      },
+      "strokeWidth": {
+        "condition": [
+          {
+            "param": "select",
+            "empty": false,
+            "value": 2
+          },
+          {
+            "param": "highlight",
+            "empty": false,
+            "value": 1
+          }
+        ],
+        "value": 0
+      },
+      "order": {"aggregate": "mean", "field": "deaths", "type": "quantitative", "sort": "descending"}
+    }
+  }
